@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 
 import org.apache.commons.io.FileUtils;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -41,8 +42,8 @@ public class StepDefLogin
 	public void logout_to_orangehrm() throws Exception 
 	{
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//p[text()='Nikita user']")).click();
-		driver.findElement(By.xpath("//a[text()='Logout']")).click();
+		driver.findElement(By.xpath("//p[@class='oxd-userdropdown-name']")).click();
+		driver.findElement(By.xpath("//a[text()='Logout']")).click();		
 	}
 	
 	@Given("Login to practice")
@@ -77,13 +78,16 @@ public class StepDefLogin
 //			} catch (IOException e) {e.printStackTrace();	}
 //		}
 //	}
-//	
-//	@AfterStep
-//	public void addScreenshotsToExtentReport(Scenario scenario)
-//	{
-//		final byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
-//		scenario.attach(screenshot, "image/png", scenario.getName());
-//	}
+	
+	@AfterStep
+	public void addScreenshotsToExtentReport(Scenario scenario)
+	{
+		if(scenario.isFailed())
+		{
+			final byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+			scenario.attach(screenshot, "image/png", scenario.getName());
+		}
+	}
 }
 
 
