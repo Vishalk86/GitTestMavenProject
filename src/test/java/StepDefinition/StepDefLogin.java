@@ -42,6 +42,7 @@ public class StepDefLogin
 	public void logout_to_orangehrm() throws Exception 
 	{
 		Thread.sleep(3000);
+		System.out.println("This Test Case is Passed 2.");
 		driver.findElement(By.xpath("//p[@class='oxd-userdropdown-name']")).click();
 		driver.findElement(By.xpath("//a[text()='Logout']")).click();		
 	}
