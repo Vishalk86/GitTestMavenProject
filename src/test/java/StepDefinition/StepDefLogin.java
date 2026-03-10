@@ -30,21 +30,17 @@ public class StepDefLogin
 		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
-		Thread.sleep(3000);
-		System.out.println("This Test Case is Passed.");
-		driver.findElement(By.xpath("//input[@name='username']")).sendKeys("Admin");
-		driver.findElement(By.xpath("//input[@name='password']")).sendKeys("admin123");
-		driver.findElement(By.xpath("//button[@type='submit']")).click();	
+		driver.navigate().to("https://practicetestautomation.com/practice-test-login/");
+		driver.findElement(By.xpath("//input[@name='username']")).sendKeys("student");
+		driver.findElement(By.xpath("//input[@name='password']")).sendKeys("Password123");
+		driver.findElement(By.xpath("//button[@id='submit']")).click();
 	}
 	
 	@Given("Logout to orangehrm")
 	public void logout_to_orangehrm() throws Exception 
 	{
 		Thread.sleep(3000);
-		System.out.println("This Test Case is Passed 2.");
-		driver.findElement(By.xpath("//p[@class='oxd-userdropdown-name']")).click();
-		driver.findElement(By.xpath("//a[text()='Logout']")).click();		
+		driver.findElement(By.xpath("//a[text()='Log out']")).click();
 	}
 	
 	@Given("Login to practice")
@@ -121,8 +117,16 @@ public class StepDefLogin
 
 
 
+//driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+//Thread.sleep(3000);
+//System.out.println("This Test Case is Passed.");
+//driver.findElement(By.xpath("//input[@name='username']")).sendKeys("Admin");
+//driver.findElement(By.xpath("//input[@name='password']")).sendKeys("admin123");
+//driver.findElement(By.xpath("//button[@type='submit']")).click();
 
-
+//System.out.println("This Test Case is Passed 2.");
+//driver.findElement(By.xpath("//p[@class='oxd-userdropdown-name']")).click();
+//driver.findElement(By.xpath("//a[text()='Logout']")).click();		
 
 
 
