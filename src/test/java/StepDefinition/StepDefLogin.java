@@ -34,6 +34,7 @@ public class StepDefLogin
 		driver.findElement(By.xpath("//input[@name='username']")).sendKeys("student");
 		driver.findElement(By.xpath("//input[@name='password']")).sendKeys("Password123");
 		driver.findElement(By.xpath("//button[@id='submit']")).click();
+		System.out.println("This Test Case is Passed 1.");
 	}
 	
 	@Given("Logout to orangehrm")
@@ -41,22 +42,24 @@ public class StepDefLogin
 	{
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//a[text()='Log out']")).click();
+		System.out.println("This Test Case is Passed 2.");
 	}
 	
 	@Given("Login to practice")
 	public void login_to_practice() 
-	{
-		System.out.println("This Test Case is Passed 3.");
+	{		
 		driver.navigate().to("https://practicetestautomation.com/practice-test-login/");
 		driver.findElement(By.xpath("//input[@name='username']")).sendKeys("student");
 		driver.findElement(By.xpath("//input[@name='password']")).sendKeys("Password123");
 		driver.findElement(By.xpath("//button[@id='submit']")).click();
+		System.out.println("This Test Case is Passed 3.");
 	}
 
 	@Given("Logout to practice")
 	public void logout_to_practice() 
 	{
 		driver.findElement(By.xpath("//a[text()='Log out']")).click();
+		System.out.println("This Test Case is Passed 4.");
 	}
 	
 //	@After
