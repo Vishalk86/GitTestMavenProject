@@ -50,6 +50,7 @@ public class StepDefLogin
 	@Given("Login to practice")
 	public void login_to_practice() 
 	{
+		System.out.println("This Test Case is Passed 3.");
 		driver.navigate().to("https://practicetestautomation.com/practice-test-login/");
 		driver.findElement(By.xpath("//input[@name='username']")).sendKeys("student");
 		driver.findElement(By.xpath("//input[@name='password']")).sendKeys("Password123");
