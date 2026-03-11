@@ -12,9 +12,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import Utility.DriverFactory;
 import io.cucumber.java.After;
 import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
+import io.cucumber.java.BeforeAll;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
@@ -22,23 +24,14 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class StepDefLogin 
 {
-    static WebDriver driver;
+     public static WebDriver driver;
     
-    
+         
 	@Given("Login to orangehrm")
 	public void login_to_orangehrm() throws Exception 
 	{
-		WebDriverManager.chromedriver().setup();
-		
-		ChromeOptions options = new ChromeOptions();
-
-		options.addArguments("--headless=new");
-		options.addArguments("--no-sandbox");
-		options.addArguments("--disable-dev-shm-usage");
-		options.addArguments("--window-size=1920,1080");
-
-		driver = new ChromeDriver(options);
-		driver.manage().window().maximize();
+		driver = DriverFactory.initDriver();
+        driver.manage().window().maximize();
 		driver.navigate().to("https://practicetestautomation.com/practice-test-login/");
 		driver.findElement(By.xpath("//input[@name='username']")).sendKeys("student");
 		driver.findElement(By.xpath("//input[@name='password']")).sendKeys("Password123");
