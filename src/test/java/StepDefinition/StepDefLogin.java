@@ -43,7 +43,6 @@ public class StepDefLogin
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//a[text()='Log out']")).click();
 		System.out.println("This Test Case is Passed 2.");
-		Assert.assertTrue(false);
 	}
 	
 	@Given("Login to practice")
