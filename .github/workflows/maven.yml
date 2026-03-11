@@ -24,7 +24,7 @@ jobs:
       run: mvn clean test
 	  
 	- name: Upload Test Report
-     	uses: actions/upload-artifact@v4
-		with:
-			name: cucumber-report
-			path: target/
+	  uses: actions/upload-artifact@v4
+	  with:
+		name: cucumber-report
+		path: target/
