@@ -30,6 +30,7 @@ public class StepDefLogin
 	@Given("Login to orangehrm")
 	public void login_to_orangehrm() throws Exception 
 	{
+		
 		driver = DriverFactory.initDriver();
         driver.manage().window().maximize();
 		driver.navigate().to("https://practicetestautomation.com/practice-test-login/");
@@ -62,6 +63,7 @@ public class StepDefLogin
 	{
 		driver.findElement(By.xpath("//a[text()='Log out']")).click();
 		System.out.println("This Test Case is Passed 4.");
+		System.out.println("Github - Jenkins Done");
 	}
 	
 //	@After
