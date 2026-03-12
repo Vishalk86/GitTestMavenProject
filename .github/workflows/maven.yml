@@ -37,3 +37,4 @@ jobs:
           subject: Automation Build Result
           body: Selenium Cucumber automation tests executed successfully.
           to: vishalkumar86k@gmail.com
+          from: ${{ secrets.EMAIL_USERNAME }}
