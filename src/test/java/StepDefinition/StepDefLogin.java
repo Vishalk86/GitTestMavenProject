@@ -63,7 +63,7 @@ public class StepDefLogin
 	{
 		driver.findElement(By.xpath("//a[text()='Log out']")).click();
 		System.out.println("This Test Case is Passed 4.");
-		System.out.println("Github - Jenkins Done");
+		System.out.println("Github - Jenkins Done Final");
 	}
 	
 //	@After
