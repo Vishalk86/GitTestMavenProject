@@ -26,3 +26,14 @@ jobs:
         with:
           name: cucumber-report
           path: target/
+
+      - name: Send Email
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 587
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          subject: Automation Build Result
+          body: Selenium Cucumber automation tests executed successfully.
+          to: vishalbtech07@gmail.com
