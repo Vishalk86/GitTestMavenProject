@@ -36,4 +36,4 @@ jobs:
           password: ${{ secrets.EMAIL_PASSWORD }}
           subject: Automation Build Result
           body: Selenium Cucumber automation tests executed successfully.
-          to: vishalbtech07@gmail.com
+          to: vishalkumar86k@gmail.com
