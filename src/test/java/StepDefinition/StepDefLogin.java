@@ -37,7 +37,7 @@ public class StepDefLogin
 		driver.findElement(By.xpath("//input[@name='username']")).sendKeys("student");
 		driver.findElement(By.xpath("//input[@name='password']")).sendKeys("Password123");
 		driver.findElement(By.xpath("//button[@id='submit']")).click();
-		System.out.println("This Test Case is Passed 1.2.");
+		System.out.println("This Test Case is Passed 1.3.");
 	}
 	
 	@Given("Logout to orangehrm")
