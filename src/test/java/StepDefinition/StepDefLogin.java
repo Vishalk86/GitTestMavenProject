@@ -2,6 +2,9 @@ package StepDefinition;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.List;
 
 import org.apache.commons.io.FileUtils;
 import org.junit.Assert;
@@ -9,6 +12,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
@@ -61,10 +65,46 @@ public class StepDefLogin
 	@Given("Logout to practice")
 	public void logout_to_practice() 
 	{
-		driver.findElement(By.xpath("//a[text()='Log out']")).click();
+		driver.findElement(By.xpath("//a[text()='Log out1']")).click();
 		System.out.println("This Test Case is Passed 4.");
 		System.out.println("Github - Jenkins Done Final");
 	}
+	
+//	@Given("Check Broken Links on Page")
+//	public void check_broken_links_on_page() 
+//	{
+//		
+//	    List<WebElement> links = driver.findElements(By.tagName("a"));
+//	    
+//	    System.out.println("Total Links: " + links.size());
+//	    
+//	    for (WebElement link : links) 
+//	     {
+//            String url = link.getAttribute("href");
+//
+//            if (url == null || url.isEmpty()) 
+//             {
+//                System.out.println("URL is empty");
+//                continue;
+//                }
+//
+//	        try {
+//		            URL linkURL = new URL(url);
+//		            HttpURLConnection conn = (HttpURLConnection) linkURL.openConnection();
+//		            conn.setConnectTimeout(3000);
+//		            conn.connect();
+//		
+//		            int responseCode = conn.getResponseCode();
+//		
+//		            if (responseCode >= 400) 
+//		            {System.out.println(url + " ---- Broken Link");} 
+//		            else 
+//		            { System.out.println(url + " ---- Valid Link");}
+//		         } 
+//	        catch (Exception e) 
+//	           {System.out.println(url + " ---- Error occurred");}
+//	    }
+//	}
 	
 //	@After
 //	public void teardown(Scenario sc)
