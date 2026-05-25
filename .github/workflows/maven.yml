@@ -2,7 +2,7 @@ name: Maven CI
 
 on:
   push:
-    branches: [ feature-login-automation ]
+    branches: [ main ]
 
 jobs:
   build:
