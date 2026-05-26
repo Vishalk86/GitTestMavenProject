@@ -3,6 +3,10 @@ name: Maven CI
 on:
   push:
     branches: [ feature-login-automation ]
+	
+	pull_request:
+		branches:
+			-main	
 
 jobs:
   build:
