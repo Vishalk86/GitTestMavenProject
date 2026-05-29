@@ -8,7 +8,7 @@ Feature: Login Functionality
 
     When I enter on "Login##username" as "Admin"
 
-    And I enter on "Login##password" as "admin11"
+    And I enter on "Login##password" as "admin1"
 
     And I click on "Login##loginButton"
 
