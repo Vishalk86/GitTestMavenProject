@@ -53,6 +53,12 @@ public class CommonFunctions
         WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
         element.click();
     }
+    
+    public String getText(String objectName)
+    {
+    	    String xpath = getObjectLocator(objectName);
+		return driver.findElement(By.xpath(xpath)).getText().trim();    	
+    }
 
     public void waitForElementPresent(String objectName) 
     {
