@@ -41,8 +41,30 @@
         <ObjectType>xpath</ObjectType>
         <Objectvalue>//div[@class='oxd-table-filter-header-title']</Objectvalue>
     </Element>
- 
- 
+    
+    <Element>
+        <Objectkey>HelpButton</Objectkey>
+        <ObjectType>xpath</ObjectType>
+        <Objectvalue>//button[@title='Help']</Objectvalue>
+    </Element>
+    
+    <Element>
+        <Objectkey>SearchButton</Objectkey>
+        <ObjectType>xpath</ObjectType>
+        <Objectvalue>//input[@type='search']</Objectvalue>
+    </Element>
+    
+    <Element>
+        <Objectkey>LicenseExpiryDate</Objectkey>
+        <ObjectType>xpath</ObjectType>
+        <Objectvalue>(//i[@class='oxd-icon bi-calendar oxd-date-input-icon'])[1]</Objectvalue>
+    </Element>
+    
+    <Element>
+        <Objectkey>DateofBirth</Objectkey>
+        <ObjectType>xpath</ObjectType>
+        <Objectvalue>(//i[@class='oxd-icon bi-calendar oxd-date-input-icon'])[2]</Objectvalue>
+    </Element>
  
  
 

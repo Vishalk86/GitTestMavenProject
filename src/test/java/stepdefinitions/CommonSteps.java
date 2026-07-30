@@ -3,8 +3,12 @@ package stepdefinitions;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 
+import io.cucumber.java.AfterStep;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -28,13 +32,19 @@ public class CommonSteps extends BaseClass
     @And("I open application")
     public void openApplication() 
     {
-        cf.openApplication(config.getProperty("url"));
+        cf.openApplication(config.getProperty("url"));        
     }
     
     @And("I open application as {string}")
     public void openApplicationAs(String value) 
     {
         cf.openApplicationAs(value);
+    }
+    
+    @And("I navigate application as {string}")
+    public void navigateApplicationAs(String value) 
+    {
+        cf.navigateTo(value);
     }
 
     @When("I enter on {string} as {string}")
@@ -48,14 +58,20 @@ public class CommonSteps extends BaseClass
     {
         cf.click(objectName);
     }
+    
+    @When("I select date {string} as {string}")
+    public void selectdate(String objectName, String value) throws Exception
+    {
+        cf.selectDate(objectName, value);
+    }
 
     @Then("I waitForElementPresent on {string}")
     public void waitForElement(String objectName) 
     {
         cf.waitForElementPresent(objectName);
-        System.out.println("Login Successful");
         //driver.quit();
-    }
+    }   
+    
     
     @When("I store text from {string}")
     public void storeText(String objectName) 
@@ -68,6 +84,19 @@ public class CommonSteps extends BaseClass
     public void enterStoredValue(String objectName) 
     {
         cf.enter(objectName, storedValue);
+    }
+    
+    @And ("I switch to Window as {string}")
+    public void switchToWindow (String value)
+    {
+    	   cf.tabHandling(value);    	   
+    }
+    
+    @AfterStep
+    public void addScreenshotsToExtentReport(Scenario scenario)
+    {
+	    	final byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+	    	scenario.attach(screenshot, "image/png", scenario.getName());    	
     }
     
     
