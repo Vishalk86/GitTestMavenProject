@@ -9,7 +9,6 @@ import java.io.File;
 
 public class XMLReader 
 {
-
 	public String getLocator(String moduleName, String objectKey) 
 	{
         String locator = "";
