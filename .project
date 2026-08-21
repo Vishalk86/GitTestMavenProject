@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
+<<<<<<< HEAD
+	<name>BDDFrameworkMaven</name>
+=======
 	<name>TestMavenProject</name>
+>>>>>>> 1b1a52bec8cf3931f524ffc1f81855c78256292a
 	<comment></comment>
 	<projects>
 	</projects>
