@@ -1,0 +1,45 @@
+name: Maven CI
+
+on:
+  push:
+    branches:
+      - feature-login-automation
+
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Build Project
+        run: mvn clean test
+
+      - name: Upload Test Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: cucumber-report
+          path: target/
+
+      - name: Send Email
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 587
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          subject: Automation Build Result
+          body: Selenium Cucumber automation tests executed successfully.
+          to: vishalkumar86k@gmail.com
+          from: ${{ secrets.EMAIL_USERNAME }}
