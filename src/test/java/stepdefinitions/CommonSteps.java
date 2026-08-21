@@ -17,6 +17,7 @@ import io.cucumber.java.en.When;
 import utilities.BaseClass;
 import utilities.CommonFunctions;
 
+
 public class CommonSteps extends BaseClass 
 {
     CommonFunctions cf;
@@ -26,7 +27,7 @@ public class CommonSteps extends BaseClass
     public void launchBrowser() 
     {
         setup();
-        cf = new CommonFunctions(driver); // Yes Done - Good
+        cf = new CommonFunctions(driver); // New
     }
 
     @And("I open application")
@@ -38,7 +39,7 @@ public class CommonSteps extends BaseClass
     @And("I open application as {string}")
     public void openApplicationAs(String value) 
     {
-        cf.openApplicationAs(value);
+    	cf.openApplicationAs(value);
     }
     
     @And("I navigate application as {string}")
